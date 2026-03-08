@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import FeaturedCars from "@/components/FeaturedCars";
 
 const navLinks = ["Home", "Cars", "About", "Contact"];
 
 const Index = () => {
   return (
+    <>
     <div className="relative min-h-screen overflow-hidden bg-background">
       {/* Video Background */}
       <video
@@ -175,6 +177,10 @@ const Index = () => {
         </div>
       </div>
     </div>
+
+      {/* Featured Cars Section */}
+      <FeaturedCars />
+    </>
   );
 };
 
