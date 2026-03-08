@@ -44,6 +44,25 @@ const Index = () => {
               APEX MOTORS
             </span>
           </div>
+
+          {/* Center Nav Menu */}
+          <div className="rounded-full border border-foreground/10 bg-foreground/5 px-2 py-2 backdrop-blur-md">
+            <div className="flex items-center gap-1">
+              {navLinks.map((link, i) => (
+                <button
+                  key={link}
+                  className={`rounded-full px-5 py-2 text-sm font-medium transition-all ${
+                    i === 0
+                      ? "bg-primary text-primary-foreground"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  {link}
+                </button>
+              ))}
+            </div>
+          </div>
+
           <button className="rounded-full border border-foreground/20 bg-foreground/5 px-6 py-2.5 text-sm font-medium text-foreground backdrop-blur-sm transition-all hover:border-primary hover:bg-primary/10 hover:text-primary">
             Contact Us
           </button>
