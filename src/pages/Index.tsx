@@ -1,6 +1,11 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import FeaturedCars from "@/components/FeaturedCars";
+import MarqueeBanner from "@/components/MarqueeBanner";
+import ServicesSection from "@/components/ServicesSection";
+import AboutSection from "@/components/AboutSection";
+import TestimonialSection from "@/components/TestimonialSection";
+import CTAFooter from "@/components/CTAFooter";
 
 const navLinks = ["Home", "Cars", "About", "Contact"];
 
