@@ -6,6 +6,7 @@ const navLinks = ["Home", "Cars", "About", "Contact"];
 
 const Index = () => {
   return (
+    <>
     <div className="relative min-h-screen overflow-hidden bg-background">
       {/* Video Background */}
       <video
