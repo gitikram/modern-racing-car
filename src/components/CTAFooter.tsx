@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Phone, Mail, MapPin } from "lucide-react";
+import f1Car from "@/assets/f1-hero-car.png";
 
 const footerLinks = {
   Company: ["About", "Careers", "Press", "Contact"],
@@ -10,51 +11,118 @@ const footerLinks = {
 const CTAFooter = () => {
   return (
     <>
-      {/* CTA Section */}
-      <section className="relative overflow-hidden bg-primary py-24 md:py-32">
-        {/* Decorative */}
+      {/* CTA Section — Enhanced */}
+      <section className="relative overflow-hidden bg-primary py-28 md:py-40">
+        {/* Layered gradients */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-primary-foreground/10" />
-        <div className="absolute -right-20 -top-20 h-80 w-80 rounded-full bg-primary-foreground/5" />
-        <div className="absolute -bottom-10 -left-10 h-60 w-60 rounded-full bg-primary-foreground/5" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,hsl(0_85%_60%/0.3),transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,hsl(0_0%_0%/0.3),transparent_60%)]" />
+
+        {/* Decorative circles */}
+        <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full border border-primary-foreground/10" />
+        <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full border border-primary-foreground/5" />
+        <div className="absolute -bottom-16 -left-16 h-80 w-80 rounded-full border border-primary-foreground/10" />
+
+        {/* Animated car silhouette */}
+        <motion.div
+          initial={{ opacity: 0, x: 200 }}
+          whileInView={{ opacity: 0.08, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+          className="absolute -bottom-10 -right-10 hidden w-[600px] md:block"
+        >
+          <img src={f1Car} alt="" className="w-full opacity-100 brightness-0 invert" />
+        </motion.div>
 
         <div className="relative mx-auto max-w-7xl px-8 md:px-16">
-          <div className="grid items-center gap-10 md:grid-cols-2">
+          <div className="grid items-center gap-12 md:grid-cols-2">
             <motion.div
-              initial={{ opacity: 0, x: -40 }}
+              initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
+              transition={{ duration: 0.8 }}
             >
+              <div className="mb-6 flex items-center gap-3">
+                <div className="h-px w-10 bg-primary-foreground/40" />
+                <span className="text-sm font-medium tracking-[0.3em] text-primary-foreground/60 uppercase">
+                  Let's build together
+                </span>
+              </div>
               <h2
-                className="mb-4 text-4xl font-bold text-primary-foreground md:text-6xl"
+                className="mb-6 text-5xl font-bold leading-[0.95] text-primary-foreground md:text-7xl"
                 style={{ fontFamily: "'Oswald', sans-serif" }}
               >
                 READY TO
                 <br />
                 UNLEASH THE
                 <br />
-                BEAST?
+                <span className="relative">
+                  BEAST
+                  <motion.span
+                    className="absolute -bottom-2 left-0 h-1 bg-primary-foreground/30"
+                    initial={{ width: 0 }}
+                    whileInView={{ width: "100%" }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.5 }}
+                  />
+                </span>
+                ?
               </h2>
-              <p className="max-w-md text-base leading-relaxed text-primary-foreground/70">
+              <p className="max-w-md text-base leading-relaxed text-primary-foreground/60">
                 Get in touch with our engineering team and let's build something
-                extraordinary together.
+                extraordinary together. From concept to championship.
               </p>
+
+              {/* Contact hints */}
+              <div className="mt-8 flex flex-col gap-3">
+                {[
+                  { icon: Phone, text: "+1 (555) APEX-001" },
+                  { icon: Mail, text: "team@apexmotors.com" },
+                  { icon: MapPin, text: "Monaco, Monte Carlo" },
+                ].map((item) => (
+                  <div key={item.text} className="flex items-center gap-3">
+                    <item.icon className="h-4 w-4 text-primary-foreground/40" />
+                    <span className="text-sm text-primary-foreground/50">{item.text}</span>
+                  </div>
+                ))}
+              </div>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 40 }}
+              initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.15 }}
-              className="flex flex-col gap-4 md:items-end"
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="flex flex-col gap-5 md:items-end"
             >
-              <button className="group flex items-center gap-3 rounded-full bg-primary-foreground px-10 py-5 text-sm font-bold tracking-wide text-primary uppercase transition-all hover:gap-5 hover:shadow-2xl">
+              {/* Primary CTA */}
+              <motion.button
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
+                className="group flex items-center gap-3 rounded-full bg-primary-foreground px-12 py-6 text-sm font-bold tracking-wide text-primary uppercase shadow-[0_20px_60px_hsl(0_0%_0%/0.3)] transition-all hover:gap-5 hover:shadow-[0_25px_80px_hsl(0_0%_0%/0.4)]"
+              >
                 Start Your Project
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </motion.button>
+
+              {/* Secondary CTA */}
+              <button className="group flex items-center gap-2 rounded-full border border-primary-foreground/20 px-10 py-5 text-sm font-semibold tracking-wide text-primary-foreground/80 uppercase transition-all hover:border-primary-foreground/40 hover:text-primary-foreground">
+                Schedule a Call
+                <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
               </button>
-              <button className="text-sm font-medium tracking-wide text-primary-foreground/60 uppercase transition-colors hover:text-primary-foreground">
-                Schedule a Call →
-              </button>
+
+              {/* Trust badge */}
+              <div className="mt-4 text-right">
+                <p className="text-xs text-primary-foreground/30">
+                  Trusted by 200+ racing teams worldwide
+                </p>
+                <div className="mt-2 flex items-center justify-end gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <div key={i} className="h-1.5 w-1.5 rounded-full bg-primary-foreground/40" />
+                  ))}
+                  <span className="ml-2 text-xs font-semibold text-primary-foreground/50">5.0</span>
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>
