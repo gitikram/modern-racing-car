@@ -179,8 +179,26 @@ const Index = () => {
       </div>
     </div>
 
+      {/* Marquee Banner */}
+      <MarqueeBanner text="PERFORMANCE" />
+
       {/* Featured Cars Section */}
       <FeaturedCars />
+
+      {/* Services Marquee */}
+      <MarqueeBanner text="EXPERTISE" />
+
+      {/* Services / Specs */}
+      <ServicesSection />
+
+      {/* About / Process */}
+      <AboutSection />
+
+      {/* Testimonials */}
+      <TestimonialSection />
+
+      {/* CTA + Footer */}
+      <CTAFooter />
     </>
   );
 };
