@@ -179,9 +179,6 @@ const Index = () => {
       </div>
     </div>
 
-      {/* Animated F1 Car Showcase */}
-      <HeroCarShowcase />
-
       {/* Marquee Banner */}
       <MarqueeBanner text="PERFORMANCE" />
 
