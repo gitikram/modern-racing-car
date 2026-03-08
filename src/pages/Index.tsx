@@ -1,6 +1,11 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import FeaturedCars from "@/components/FeaturedCars";
+import MarqueeBanner from "@/components/MarqueeBanner";
+import ServicesSection from "@/components/ServicesSection";
+import AboutSection from "@/components/AboutSection";
+import TestimonialSection from "@/components/TestimonialSection";
+import CTAFooter from "@/components/CTAFooter";
 
 const navLinks = ["Home", "Cars", "About", "Contact"];
 
@@ -174,8 +179,26 @@ const Index = () => {
       </div>
     </div>
 
+      {/* Marquee Banner */}
+      <MarqueeBanner text="PERFORMANCE" />
+
       {/* Featured Cars Section */}
       <FeaturedCars />
+
+      {/* Services Marquee */}
+      <MarqueeBanner text="EXPERTISE" />
+
+      {/* Services / Specs */}
+      <ServicesSection />
+
+      {/* About / Process */}
+      <AboutSection />
+
+      {/* Testimonials */}
+      <TestimonialSection />
+
+      {/* CTA + Footer */}
+      <CTAFooter />
     </>
   );
 };
