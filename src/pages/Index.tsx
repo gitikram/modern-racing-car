@@ -176,6 +176,10 @@ const Index = () => {
         </div>
       </div>
     </div>
+
+      {/* Featured Cars Section */}
+      <FeaturedCars />
+    </>
   );
 };
 
