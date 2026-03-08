@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import FeaturedCars from "@/components/FeaturedCars";
 
 const navLinks = ["Home", "Cars", "About", "Contact"];
 
