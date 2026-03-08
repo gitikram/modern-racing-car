@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import FeaturedCars from "@/components/FeaturedCars";
-import HeroCarShowcase from "@/components/HeroCarShowcase";
 import MarqueeBanner from "@/components/MarqueeBanner";
 import ServicesSection from "@/components/ServicesSection";
 import AboutSection from "@/components/AboutSection";
@@ -179,9 +178,6 @@ const Index = () => {
         </div>
       </div>
     </div>
-
-      {/* Animated F1 Car Showcase */}
-      <HeroCarShowcase />
 
       {/* Marquee Banner */}
       <MarqueeBanner text="PERFORMANCE" />
